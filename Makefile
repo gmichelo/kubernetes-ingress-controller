@@ -84,7 +84,7 @@ run: manifests generate fmt vet ## Run a controller from your host.
 
 .PHONY: docker-build
 docker-build: test ## Build docker image with the manager.
-	DOCKER_BUILDKIT=1 docker build -t ${IMG} .
+	ns cluster build --repository=test/ngrok-ingress-controller
 
 .PHONY: docker-push
 docker-push: ## Push docker image with the manager.
