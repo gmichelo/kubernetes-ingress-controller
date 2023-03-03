@@ -110,7 +110,7 @@ deploy: docker-build manifests kustomize ## Deploy controller to the K8s cluster
 		--namespace ngrok-ingress-controller \
 		--create-namespace \
 		--set podAnnotations."k8s\.ngrok\.com/test"="\{\"env\": \"local\"\}" \
-		--set image.repository=$(IMG) \
+		--set image.repository=tenant_01gr48y5j6qv4mgheyj4mchj76.registry.fra1.nscluster.cloud/test/ngrok-ingress-controller \
 		--set credentials.apiKey=$(NGROK_API_KEY) \
 		--set credentials.authtoken=$(NGROK_AUTHTOKEN) \
 		--set metaData.env=local,metaData.from=makefile && \
